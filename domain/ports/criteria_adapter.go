@@ -16,7 +16,7 @@ type QueryTranslator interface {
 	// - superFilters: A list of filters to apply in top-level of the query that only will allow equals operator and will skip validation of valid filters for client.
 	//
 	// If there is an error during conversion, it returns an error.
-	ToMongo(validMapEntityName string, rawCriteria models.Criteria, superFilters []models.SuperFilter) (map[string]interface{}, error)
+	ToMongo(validMapEntityName string, rawCriteria models.Criteria, superFilters []models.SuperFilter) (models.MongoQuery, error)
 
 	// ToElastic converts the given criteria to an Elasticsearch query string.
 	// It takes as parameters.

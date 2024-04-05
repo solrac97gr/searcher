@@ -16,7 +16,7 @@ type QueryTranslator struct {
 
 var _ ports.QueryTranslator = &QueryTranslator{}
 
-func NewCriteriaAdapter() (*QueryTranslator, error) {
+func NewQueryTranslator() (*QueryTranslator, error) {
 	df, err := date.NewFormatter()
 	if err != nil {
 		return nil, err

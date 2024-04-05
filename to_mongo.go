@@ -9,7 +9,7 @@ import (
 	"github.com/solrac97gr/searcher/internal/sentinels"
 )
 
-func (ca *QueryTranslator) ToMongo(validMapEntityName string, rawCriteria models.Criteria, superFilters []models.SuperFilter) (map[string]interface{}, error) {
+func (ca *QueryTranslator) ToMongo(validMapEntityName string, rawCriteria models.Criteria, superFilters []models.SuperFilter) (models.MongoQuery, error) {
 	// We need to pre-process the criteria adding default values in case of some conditions are matched (check PrepareCriteria())
 	c := ca.PrepareCriteria(&rawCriteria)
 
